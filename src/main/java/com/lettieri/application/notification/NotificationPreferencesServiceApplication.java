@@ -4,10 +4,10 @@ package com.lettieri.application.notification;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableConfigurationProperties
-//@ComponentScan("com.lettieri.application.notification.*")
+@EnableDiscoveryClient
 public class NotificationPreferencesServiceApplication {
 
 

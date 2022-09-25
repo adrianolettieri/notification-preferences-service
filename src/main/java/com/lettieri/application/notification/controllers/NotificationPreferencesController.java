@@ -1,6 +1,5 @@
 package com.lettieri.application.notification.controllers;
 
-import com.lettieri.application.notification.entities.Preference;
 import com.lettieri.application.notification.formatters.PreferenceMapper;
 import com.lettieri.application.notification.model.CustomerDTO;
 import com.lettieri.application.notification.model.PreferenceDTO;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("notification")
+@RequestMapping()
 @AllArgsConstructor
 @Api(tags = "Notification Preferences")
 public class NotificationPreferencesController {
@@ -29,5 +28,10 @@ public class NotificationPreferencesController {
         preferenceDTO.setStatus(PreferenceStatus.SUCCESS);
         preferenceDTO.setStatusDescription(PreferenceStatus.SUCCESS.message);
         return ResponseEntity.ok(preferenceDTO);
+    }
+
+    @GetMapping("/healthcheck")
+    public String healthCheck (){
+        return "UP";
     }
 }
